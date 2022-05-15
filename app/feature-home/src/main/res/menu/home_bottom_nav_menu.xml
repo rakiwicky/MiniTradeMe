@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_discover"
+        android:icon="@drawable/home_search"
+        android:title="Discover" />
+
+    <item
+        android:id="@+id/nav_notification"
+        android:icon="@drawable/home_notifications"
+        android:title="Notifications" />
+
+    <item
+        android:id="@+id/nav_watchlist"
+        android:icon="@drawable/home_binoculars"
+        android:title="Watchlist" />
+
+    <item
+        android:id="@+id/nav_mytrademe"
+        android:icon="@drawable/home_profile"
+        android:title="My Trade Me" />
+
+</menu>

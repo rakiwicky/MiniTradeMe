@@ -1,0 +1,12 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "MyTradeMeApp"
+include ':app'
+include ':app:library-base'
+include ':app:feature-home'

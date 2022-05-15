@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.trademe.feature.home">
+
+    <application
+        android:theme="@style/Theme.MyTradeMeApp">
+        <activity
+            android:name=".internal.ui.main.MainActivity"
+            android:exported="true">
+        </activity>
+    </application>
+
+</manifest>
