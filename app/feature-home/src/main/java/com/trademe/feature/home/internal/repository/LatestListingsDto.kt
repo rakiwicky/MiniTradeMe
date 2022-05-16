@@ -2,6 +2,9 @@ package com.trademe.feature.home.internal.repository
 
 import com.google.gson.annotations.SerializedName
 import com.trademe.feature.home.internal.domain.LatestListing
+import kotlinx.coroutines.processNextEventInCurrentThread
+import java.time.LocalDateTime
+import java.util.*
 
 internal data class LatestListingsDto(
     @SerializedName("List") private val list: List<LatestListingDto>?
@@ -22,17 +25,33 @@ internal data class LatestListingsDto(
         @SerializedName("BuyNowPrice")
         val buyNowPrice: Double?,
 
+        @SerializedName("HasBuyNow")
+        val hasBuyNow: Boolean,
+
         @SerializedName("PictureHref")
-        val pictureHref: String?
+        val pictureHref: String?,
+
+        @SerializedName("IsClassified")
+        val isClassified: Boolean,
+
+        @SerializedName("StartDate")
+        val startDate: String,
+
+        @SerializedName("PriceDisplay")
+        val priceDisplay: String
     ) {
         fun toLatestListing(): LatestListing {
-            return com.trademe.feature.home.internal.domain.LatestListing(
+            return LatestListing(
                 listingId = listingId,
-                title = title ?: "",
+                title = title,
                 region = region,
                 startPrice = startPrice,
                 buyNowPrice = buyNowPrice,
-                pictureHref = pictureHref
+                hasBuyNow = hasBuyNow,
+                pictureHref = pictureHref,
+                isClassified = isClassified,
+                startDate = startDate,
+                priceDisplay = priceDisplay
             )
         }
     }

@@ -1,7 +1,9 @@
 package com.trademe.feature.home.internal.ui.latestlisting
 
 import com.trademe.feature.home.internal.domain.LatestListing
-import java.text.DecimalFormat
+import java.text.NumberFormat
+import java.util.*
+import kotlin.math.roundToInt
 
 internal class LatestListingsListMapper {
 
@@ -13,16 +15,22 @@ internal class LatestListingsListMapper {
         return LatestListingListItem(
             listingId = latestListing.listingId,
             title = latestListing.title,
-            region = latestListing.title,
-            startPrice = latestListing.startPrice.convert(),
-            buyNowPrice = latestListing.buyNowPrice,
+            region = latestListing.region,
+            priceDisplay = latestListing.priceDisplay,
+            buyNowPrice = getBuyNowPrice(latestListing.buyNowPrice),
+            buyNowVisible = latestListing.buyNowPrice != null,
             pictureHref = latestListing.pictureHref
         )
     }
 
-    fun Double.convert(): String {
-        val format = DecimalFormat("#,###.00")
-        format.isDecimalSeparatorAlwaysShown = false
-        return format.format(this).toString()
+    private fun getBuyNowPrice(price: Double?): String{
+        price?.let {
+            val format: NumberFormat = NumberFormat.getCurrencyInstance()
+            format.maximumFractionDigits = 2
+            format.currency = Currency.getInstance("USD")
+
+            return format.format(it)
+        }
+        return ""
     }
 }

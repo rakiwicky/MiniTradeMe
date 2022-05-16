@@ -1,6 +1,7 @@
 package com.trademe.feature.home.internal.ui.latestlisting
 
 import android.os.Bundle
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mytrademeapp.base.BaseViewModelFragment
 import com.mytrademeapp.base.autoCleared
@@ -31,6 +32,7 @@ internal class LatestListingFragment : BaseViewModelFragment<LatestListingViewMo
             adapter = listAdapter
             layoutManager = LinearLayoutManager(context)
             isNestedScrollingEnabled = false
+            addItemDecoration(DividerItemDecoration(context, (layoutManager as LinearLayoutManager).orientation))
         }
     }
 }

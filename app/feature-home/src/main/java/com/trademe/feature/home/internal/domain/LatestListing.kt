@@ -6,5 +6,9 @@ internal data class LatestListing (
     val region: String?,
     val startPrice: Double,
     val buyNowPrice: Double?,
-    val pictureHref: String?
+    val pictureHref: String?,
+    val hasBuyNow: Boolean,
+    val isClassified: Boolean,
+    val startDate: String,
+    val priceDisplay: String
 )

@@ -3,4 +3,5 @@
     <string name="home_notifications_screen_title">Notifications</string>
     <string name="home_watchlist_screen_title">Watchlist</string>
     <string name="home_mytrademe_screen_title">My Trade Me</string>
+    <string name="home_buy_now">Buy Now</string>
 </resources>
