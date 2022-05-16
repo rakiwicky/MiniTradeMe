@@ -1,35 +1,14 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
+
     <!-- Base application theme. -->
     <style name="Theme.MyTradeMeApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/tasman_500</item>
-        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/feijoa_500</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
 
-        <item name="bottomNavigationStyle">@style/Widget.MaterialComponents.BottomNavigationView.Colored</item>
-
-        <item name="toolbarStyle">@style/MyThemeOverlay_Toolbar</item>
-
-
-    </style>
-
-    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/tasman_500</item>
-        <item name="android:colorForeground">@color/black</item>
-    </style>
-
-    <style name="MyThemeOverlay_Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="titleTextColor">@color/bluff_oyster_600</item>
-        <item name="colorOnPrimary">@color/tasman_500</item>
-    </style>
-
-    <style name="ThemeOverlay.App.Toolbar" parent="">
-
+        <item name="android:textColorPrimary">@color/bluff_oyster_800</item>
+        <item name="android:textColorSecondary">@color/bluff_oyster_600</item>
     </style>
 
 </resources>

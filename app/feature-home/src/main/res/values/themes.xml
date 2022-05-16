@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="HomeTextAppearance.MyTradeMeApp" parent="@android:style/TextAppearance"/>
+
+    <style name="HomeTextAppearance.MyTradeMeApp.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="HomeTextAppearance.MyTradeMeApp.Medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="HomeTextAppearance.MyTradeMeApp.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

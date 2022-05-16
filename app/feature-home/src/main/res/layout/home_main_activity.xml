@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?android:attr/windowBackground"
+                app:titleTextAppearance="@style/HomeTextAppearance.MyTradeMeApp.Medium.Bold"
                 app:menu="@menu/home_top_nav_menu" />
 
         </com.google.android.material.appbar.AppBarLayout>
