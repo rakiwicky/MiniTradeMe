@@ -10,7 +10,7 @@ class RestServiceBuilder(
     private val callAdapterFactory: CallAdapter.Factory
 ) {
 
-    fun <T> create(klass: Class<T>, _baseUrl: String, client: OkHttpClient): T {
+    fun <T> create(kClass: Class<T>, _baseUrl: String, client: OkHttpClient): T {
         val baseUrl = if (_baseUrl.endsWith("/")) _baseUrl else "$_baseUrl/"
 
         return Retrofit.Builder()
@@ -19,6 +19,6 @@ class RestServiceBuilder(
             .addConverterFactory(converterFactory)
             .addCallAdapterFactory(callAdapterFactory)
             .build()
-            .create(klass)
+            .create(kClass)
     }
 }

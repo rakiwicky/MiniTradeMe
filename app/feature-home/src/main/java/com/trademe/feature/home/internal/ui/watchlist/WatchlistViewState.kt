@@ -4,6 +4,7 @@ import android.content.res.Resources
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.trademe.feature.home.R
+import javax.inject.Inject
 
 internal class WatchlistViewState(
     resources: Resources
@@ -16,4 +17,9 @@ internal class WatchlistViewState(
     )
 
     val binding: LiveData<WatchlistViewStateBinding> = _binding
+
+    class Factory @Inject constructor(private val resources: Resources) {
+        fun create(
+        ) = WatchlistViewState(resources)
+    }
 }

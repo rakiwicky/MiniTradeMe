@@ -1,15 +1,14 @@
 package com.trademe.feature.home.internal.ui.notification
 
-import android.content.res.Resources
 import com.mytrademeapp.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 internal class NotificationViewModel @Inject constructor(
-    resources: Resources
+    viewStateFactory: NotificationViewState.Factory
 ) : BaseViewModel() {
 
-    private val viewState = NotificationViewState(resources)
+    private val viewState = viewStateFactory.create()
     val binding = viewState.binding
 }

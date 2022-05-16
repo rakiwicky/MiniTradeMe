@@ -5,7 +5,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -49,7 +52,15 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideCompositeDisposable(): CompositeDisposable {
-        return CompositeDisposable()
+    @Named("AndroidSchedulers")
+    fun provideAndroidSchedulers(): Scheduler {
+        return AndroidSchedulers.mainThread()
+    }
+
+    @Provides
+    @Singleton
+    @Named("IOSchedulers")
+    fun provideSchedulers(): Scheduler {
+        return Schedulers.io()
     }
 }

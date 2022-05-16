@@ -1,13 +1,18 @@
 package com.trademe.feature.home.internal.ui.main
 
+import android.content.res.Resources
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.trademe.feature.home.R
 import com.trademe.feature.home.internal.ui.main.MainViewState.TargetState.*
+import javax.inject.Inject
 
-internal class MainViewState {
+internal class MainViewState(
+    private val resources: Resources
+) {
     private val _binding = MutableLiveData(
         MainViewStateBinding(
-            title = "Browse"
+            title = resources.getString(R.string.home_title_browse)
         )
     )
 
@@ -18,18 +23,23 @@ internal class MainViewState {
 
         _binding.value = when (targetState) {
             is LatestListing -> {
-                currentState!!.copy(title = "Browse")
+                currentState!!.copy(title = resources.getString(R.string.home_title_browse))
             }
             is Watchlist -> {
-                currentState!!.copy(title = "Watchlist")
+                currentState!!.copy(title = resources.getString(R.string.home_title_watchlist))
             }
             is Notification -> {
-                currentState!!.copy(title = "Notifications")
+                currentState!!.copy(title = resources.getString(R.string.home_title_notifications))
             }
             is MyTradeMe -> {
-                currentState!!.copy(title = "My Trade Me")
+                currentState!!.copy(title = resources.getString(R.string.home_title_mytrade_me))
             }
         }
+    }
+
+    class Factory @Inject constructor(private val resources: Resources) {
+        fun create(
+        ) = MainViewState(resources)
     }
 
     sealed class TargetState {

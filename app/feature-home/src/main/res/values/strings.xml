@@ -4,4 +4,8 @@
     <string name="home_watchlist_screen_title">Watchlist</string>
     <string name="home_mytrademe_screen_title">My Trade Me</string>
     <string name="home_buy_now">Buy Now</string>
+    <string name="home_title_browse">Browse</string>
+    <string name="home_title_watchlist">Watchlist</string>
+    <string name="home_title_notifications">Notifications</string>
+    <string name="home_title_mytrade_me">My Trade Me</string>
 </resources>

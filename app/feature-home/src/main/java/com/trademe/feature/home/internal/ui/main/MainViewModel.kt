@@ -7,10 +7,15 @@ import androidx.lifecycle.ViewModel
 import com.trademe.feature.home.R
 import com.trademe.feature.home.internal.HomeDestination.*
 import com.trademe.feature.home.internal.ui.main.MainViewState.TargetState.*
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-internal class MainViewModel : ViewModel(), LifecycleObserver {
+@HiltViewModel
+internal class MainViewModel @Inject constructor(
+    viewStateFactory: MainViewState.Factory
+) : ViewModel(), LifecycleObserver {
 
-    private val viewState = MainViewState()
+    private val viewState = viewStateFactory.create()
     val binding = viewState.binding
 
     val fragment = MutableLiveData<Class<*>>()

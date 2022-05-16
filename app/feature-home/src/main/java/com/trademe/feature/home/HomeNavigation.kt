@@ -9,5 +9,5 @@ import javax.inject.Inject
 class HomeNavigation @Inject constructor(
     @ActivityContext private val context: Context
 ) {
-    fun createItemMainActivityIntent() = Intent(context, MainActivity::class.java)
+    fun createMainActivityIntent() = Intent(context, MainActivity::class.java)
 }

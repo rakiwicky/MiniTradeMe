@@ -9,7 +9,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        minSdk 21
+        minSdk 24
         targetSdk 32
     }
 
@@ -20,7 +20,9 @@ android {
     }
 
     testOptions {
-        unitTests.includeAndroidResources = true
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -69,5 +71,5 @@ dependencies {
 
     testImplementation "androidx.test.ext:junit-ktx:1.1.3"
 
-    testImplementation "org.robolectric:robolectric:4.5.1"
+    testImplementation "org.robolectric:robolectric:4.8.1"
 }

@@ -2,9 +2,6 @@ package com.trademe.feature.home.internal.repository
 
 import com.google.gson.annotations.SerializedName
 import com.trademe.feature.home.internal.domain.LatestListing
-import kotlinx.coroutines.processNextEventInCurrentThread
-import java.time.LocalDateTime
-import java.util.*
 
 internal data class LatestListingsDto(
     @SerializedName("List") private val list: List<LatestListingDto>?

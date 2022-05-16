@@ -8,7 +8,7 @@ import kotlin.math.roundToInt
 internal class LatestListingsListMapper {
 
     fun transform(latestListings: List<LatestListing>): List<LatestListingListItem> {
-        return latestListings.map { createListItem(it) }
+        return latestListings.map { createListItem(it) }.take(20)
     }
 
     private fun createListItem(latestListing: LatestListing): LatestListingListItem {
@@ -27,7 +27,7 @@ internal class LatestListingsListMapper {
         price?.let {
             val format: NumberFormat = NumberFormat.getCurrencyInstance()
             format.maximumFractionDigits = 2
-            format.currency = Currency.getInstance("USD")
+            format.currency = Currency.getInstance("NZD")
 
             return format.format(it)
         }
