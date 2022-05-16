@@ -8,7 +8,7 @@ I think I am somewhat close to an MVP(85%). Some cosmetic work to be done. And t
 
 I started doing this by Jetpck compose and Coroutines - since I'm still exploring them, I thought of going with Data binding and Retrofit + RxJava. 
 
-# Technologies:-
+# Technologies
 Design Pattern/Architecture
 - MVVM (Data Binding)
 
@@ -26,7 +26,7 @@ Other
 - okhttp-signpost
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-# Improvements:-
+# Improvements
 - Couldn't really finalize the Pricing logic(I finished the BuyNowPrice scenario) in the List screen.
 - Couldn't finish ordering the latest listings by Start Date.
 - Couldn't complete displaying the Toasts.
