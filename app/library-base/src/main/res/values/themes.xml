@@ -1,14 +1,20 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="Theme.MyTradeMeApp" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Primary brand color. -->
         <item name="colorPrimary">@color/tasman_500</item>
-        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/feijoa_500</item>
-
         <item name="android:textColorPrimary">@color/bluff_oyster_800</item>
         <item name="android:textColorSecondary">@color/bluff_oyster_600</item>
+
+        <item name="toolbarStyle">@style/Widget.ThemeOverlay.Toolbar</item>
+    </style>
+
+    <style name="Widget.ThemeOverlay.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="materialThemeOverlay">@style/Widget.MyTradeMeApp.Toolbar</item>
+    </style>
+
+    <style name="Widget.MyTradeMeApp.Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="iconTint">?colorPrimary</item>
     </style>
 
 </resources>
